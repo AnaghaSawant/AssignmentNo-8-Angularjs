@@ -1,0 +1,28 @@
+myApp.controller('myCntrl', function($scope, MyService){
+	$scope.isVisible = false;
+	items = [];
+	$scope.SubmitValue = function()
+    {
+      var item = {
+        value: 0,
+        txt:$scope.myLabel,
+        color: $scope.myColor
+      }
+      $scope.answer =  MyService.add(item);
+    }
+
+	$scope.ShowDiv = function () {
+      $scope.isVisible = true;
+      $scope.addVisible = true;
+    }
+
+    $scope.item = MyService.add($scope)
+    // console.log($scope.item)
+    $scope.increamentValue = function(index){
+      $scope.items[index].value++;
+    }
+    
+    $scope.decreamentValue = function(index){
+      $scope.items[index].value--;
+    }
+});
