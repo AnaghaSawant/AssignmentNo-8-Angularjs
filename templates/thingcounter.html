@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>thing counter using angular javascript </title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/thingcounter.css">
+		<script type="text/javascript" src="../js/thingcounter.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myCntrl">
+			<div class="head">
+				<header>
+					<h1 class="active">Active Counters</h1>
+				</header>
+			</div>
+
+			<div ng-hide="addVisible">
+				<input class="addBtn" type="button" value="+" ng-click="ShowDiv()"/>
+			</div>
+
+			<div ng-show = "isVisible" class="AddForm">
+				<form name="myForm">
+					<h4 class="txt"> label </h4>
+					<input id="lbl" type="text" ng-model="myLabel"/>
+					<h4 class="clrtxt"> color </h4>
+			  		<input id="clr" type="color" ng-model="myColor">
+					<input id="sub" type="submit" value="save" ng-click="SubmitValue()">
+				</form>
+			</div>
+
+			<div class="myDiv" ng-repeat="item in items track by $index">
+				<div my-directive>
+				</div>
+			</div>	
+		</div>
+	</body>
+</html>
